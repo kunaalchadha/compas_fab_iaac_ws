@@ -18,6 +18,9 @@ def get_tcp_offset(ip="127.0.0.1"):
     tcp = ur_c.getTCPOffset()
     return tcp
 
+# def speed_slider_mask(valu,ip="127.0.0.1"):
+#     value = 20
+#     return value
 
 def move_to_joints(config, speed, accel, nowait, ip="127.0.0.1"):
     # speed rad/s, accel rad/s^2, nowait bool
@@ -53,7 +56,8 @@ def get_tcp_frame(ip="127.0.0.1"):
     return frame
 
 
-def move_trajectory(configurations, speed, accel, blend, ur_c):
+def move_trajectory(configurations, speed, accel, blend, ip="127.0.0.1"):
+    ur_c = RTDEControl(ip)
     path = []
     for config in configurations:
         path.append(config.joint_values + [speed, accel, blend])
