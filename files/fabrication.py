@@ -61,51 +61,51 @@ def stop_teach_mode(ip="127.0.0.1"):
     ur_c = RTDEControl(ip)
     ur_c.endTeachMode()
 
-def measure_frame_from_3_points(ip="127.0.0.1"):
-    ur_c = RTDEControl(ip)
-    ur_r = RTDEReceive(ip)
+# def measure_frame_from_3_points(ip="127.0.0.1"):
+#     ur_c = RTDEControl(ip)
+#     ur_r = RTDEReceive(ip)
 
-    tcp = ur_c.getTCPOffset()
-    print("Hello Becky, your current TCP offset is:")
-    print(tcp)
+#     tcp = ur_c.getTCPOffset()
+#     print("Hello Becky, your current TCP offset is:")
+#     print(tcp)
 
-    print("The robot is in free drive mode now")
-    print()
+#     print("The robot is in free drive mode now")
+#     print()
 
-    print("1. Move the robot tip to the origin of the calibration frame and press Enter")
-    ur_c.teachMode()
-    input()
-    ur_c.endTeachMode()
+#     print("1. Move the robot tip to the origin of the calibration frame and press Enter")
+#     ur_c.teachMode()
+#     input()
+#     ur_c.endTeachMode()
 
-    frame_origin = ur_r.getActualTCPPose()
-    print("Frame origin:")
-    print(frame_origin)
+#     frame_origin = ur_r.getActualTCPPose()
+#     print("Frame origin:")
+#     print(frame_origin)
 
-    print("2. Move the robot tip to the X-axis of the calibration frame and press Enter")
-    ur_c.teachMode()
-    input()
-    ur_c.endTeachMode()
+#     print("2. Move the robot tip to the X-axis of the calibration frame and press Enter")
+#     ur_c.teachMode()
+#     input()
+#     ur_c.endTeachMode()
 
-    frame_point_on_xaxis = ur_r.getActualTCPPose()
-    print("Frame on X-axis:")
-    print(frame_point_on_xaxis)
+#     frame_point_on_xaxis = ur_r.getActualTCPPose()
+#     print("Frame on X-axis:")
+#     print(frame_point_on_xaxis)
 
-    print("3. Move the robot tip to the Y-axis of the calibration frame and press Enter")
-    ur_c.teachMode()
-    input()
-    ur_c.endTeachMode()
+#     print("3. Move the robot tip to the Y-axis of the calibration frame and press Enter")
+#     ur_c.teachMode()
+#     input()
+#     ur_c.endTeachMode()
 
-    frame_point_on_yaxis = ur_r.getActualTCPPose()
-    print("Frame on Y-axis:")
-    print(frame_point_on_yaxis)
+#     frame_point_on_yaxis = ur_r.getActualTCPPose()
+#     print("Frame on Y-axis:")
+#     print(frame_point_on_yaxis)
 
-    frame = Frame.from_points(
-        point=frame_origin[0:3],
-        point_xaxis=frame_point_on_xaxis[0:3],
-        point_xyplane=frame_point_on_yaxis[0:3]
-    )
+#     frame = Frame.from_points(
+#         point=frame_origin[0:3],
+#         point_xaxis=frame_point_on_xaxis[0:3],
+#         point_xyplane=frame_point_on_yaxis[0:3]
+#     )
 
-    return frame
+#     return frame
 
 if __name__ == "__main__":
     ip = "127.0.0.1"
