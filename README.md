@@ -9,20 +9,23 @@ Ref:
 
 
 **Installations**
+
 GitHub Desktop (download)
 - https://desktop.github.com/
+
 Workshop Github
 - https://github.com/kunaalchadha/compas_fab_iaac_ws
+
 Anaconda (download)
 - https://docs.anaconda.com/anaconda/install/windows/
 
 **SCANNING**
 
-Cloud Compare 
+Cloud Compare (download)
 
 - https://www.danielgm.net/cc/
 
-Volvox (gH)
+Volvox (gH download)
 
 - https://www.food4rhino.com/en/app/volvox
 
